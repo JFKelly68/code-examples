@@ -1,0 +1,40 @@
+
+
+.container {
+	display: block;
+	margin: 1em;
+}
+
+.tooltip {
+	border: 1px solid black;
+	padding: 0.8em;
+	background-color: rgba(0,0,0,0.7);
+}
+
+.tip {
+	color: white;
+	padding: 2px 0;
+}
+
+#histogram .bar text {
+	fill: blue;
+	font: 10px sans-serif;
+	text-anchor: middle;
+}
+
+#histogram rect {
+	fill: orange;
+	shape-rendering: crispEdges;
+}
+
+#histogram rect:hover {
+	fill: sienna;
+}
+
+.details {
+	margin: 1em auto 0;
+}
+
+.details span {
+	margin-left: 1em;
+}

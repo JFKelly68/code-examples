@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <title>EquityZen D3 Challenge</title>
+	    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+	    <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+	    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+		<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	    <link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+
+	<body>
+
+		<div class="container">
+		    <input type="text" id="search-text" placeholder="Enter text" />
+		    <button id="github-search">Search</button>
+		    <div class="details">
+		    	<div class="detail">Last Search: <span id="term"></span></div>
+		    	<div class="detail"># of Users: <span id="logins"></span></div>
+		    </div>
+	    </div>
+	    <div class="container">
+	    	<svg id="histogram"></svg>
+	    </div>
+
+	    <script type="text/javascript" src="script.js"></script>
+	</body>
+
+</html>
