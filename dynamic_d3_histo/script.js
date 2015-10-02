@@ -155,7 +155,7 @@ function buildHashMap(data) {
 	var hashMap = [], 
 		other = { letter: "Other", value: 0 };
 
-	// initialize a hashmap with all letters of alphabet to display 0 for letters that don't exist in data
+	// initialize a hashmap with all letters of alphabet - in order to display 0 for letters that don't exist in data
 	// this approach seemed better than looping through after creating the hashmap and attempting to create
 	// objects in the undefined slots. Also made it easier to put other at the end (right edge of the graph)
 	for(var i = "A".charCodeAt(); i <= "Z".charCodeAt(); i++) {
@@ -180,8 +180,6 @@ function buildHashMap(data) {
 				
 				// increment the value prop
 				hashMap[hash_char].value++;
-
-				// console.log(_char, hashMap[hash_char]);
 			}
 			else {
 				// increment the value prop of "other"
@@ -199,7 +197,8 @@ function buildHashMap(data) {
 }
 
 function _hash(val) {
-	// in order to align with the preexisting/generated objects in hashMap, add 13
+	// in order to align counts with the correct preexisting/generated objects in hashMap, add 13
+	// in effect: charCodeAt("A") % 26 !== 0, but if we subtract 13, it does.
 	return ((val.charCodeAt()+13)%26);
 }
 
