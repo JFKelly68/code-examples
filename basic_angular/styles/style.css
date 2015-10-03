@@ -1,0 +1,99 @@
+/* Styles go here */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  text-align: center;
+}
+
+.block {
+  margin: 0 auto;
+  padding: 1%;
+  text-align: center;
+}
+
+.pre-box {
+  margin: 5% auto;
+  width: 55%;
+  padding: 5px;
+}
+
+.pre-box pre {
+  border: 1px solid black;
+}
+
+form {
+  margin: 0 auto;
+  width: 70%;
+}
+
+.input-field {
+  margin: 2px 0;
+}
+
+.input-field input {
+  height: 2em;
+  width: 80%
+}
+
+.input-field .btn {
+  margin: 0px 7%;
+  width: 30%;
+}
+
+.error {
+  font-size: 14px;
+  color: red;
+}
+
+.valid {
+  color: green;
+}
+
+.nav {
+  margin: 0 8%;
+  border: 1px solid #555;
+  border-bottom: none;
+  border-radius: 5px 5px 0 0;
+  padding: 1%;
+  text-decoration: none;
+}
+
+.nav:hover {
+  text-decoration: underline;
+  background-color: #DDD;
+}
+
+
+#child-view {
+  margin: 0 15%;
+  height: 180px;
+  padding-top: 10px;
+  background-color: #DDD;
+  box-shadow: inset 0 0 5px #444;
+  overflow-y: scroll;
+}
+
+.user-container {
+  width: 50%;
+  margin: 0 auto;
+  list-style: none;
+}
+
+.users {
+  margin: 1em 5px;
+  padding: 6px;
+  border: 1px solid #AAA;
+  background-color: #FFF;
+}
+
+.users div {
+  text-align: left;
+  margin-left: 3em;
+}
+
+.users .val {
+  margin-left: 2em;
+  color: #3F62EA;
+}

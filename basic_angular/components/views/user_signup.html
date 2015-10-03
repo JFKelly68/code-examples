@@ -1,0 +1,46 @@
+<h3>&quot;Signup&quot; here:</h3>
+  
+  <form name="ccForm" novalidate>
+    <div class="input-field"> 
+      <input type="text" name="name" ng-model="MC.user.name" ng-model-options="{updateOn: 'default blur', debounce: {'default': 500, 'blur': 0} }" id="name" placeholder="Name" required/>
+    </div>
+    <div class="input-field"> 
+      <input type="email" name="email" ng-model="MC.user.email" ng-model-options="{updateOn: 'default blur', debounce: {'default': 500, 'blur': 0} }" id="email" placeholder="Email" email-valid required/>
+    </div>
+    <div class="input-field">
+      <input type="password" name="password" ng-model="MC.user.password" id="password" ng-model-options="{updateOn: 'default blur', debounce: {'default': 500, 'blur': 0} }" placeholder="Password" required />
+    </div>
+    <div class="input-field">
+      <input type="password" name="verify" ng-model="MC.user.verify" id="verify" ng-model-options="{updateOn: 'default blur', debounce: {'default': 500, 'blur': 0} }" placeholder="Verify" pass-verify="MC.user.password" required/>
+    </div>
+    <div>
+      <div class="error" ng-show="ccForm.password.$dirty && ccForm.verify.$dirty && (MC.user.password.length && ccForm.verify.$viewValue.length) && ccForm.verify.$error.verify">Passwords Do Not Match</div>
+      <span class="waiting" ng-show="ccForm.email.$pending.emailInvalid">...</span>
+      <span class="valid" ng-show="ccForm.email.$dirty && !ccForm.email.$error.emailInvalid && !ccForm.email.$pending.emailInvalid">Good!</span>
+      <span class="error" ng-show="ccForm.email.$dirty && ccForm.email.$error.emailInvalid">X -Email already in use- X</span>
+    </div>
+    <div class="input-field">
+      <input type="button" class="btn" ng-click="MC.submit(MC.user)" ng-disabled="ccForm.$invalid || ccForm.$pending" value="Submit"/>
+      <input type="button" class="btn" ng-click="MC.reset(ccForm)" value="Reset" />
+    </div>
+  </form>
+  <div class="pre-box">
+    A little something to see validation and User obj under the hood?
+    <input type="checkbox" ng-model="prebox"/>
+    <pre ng-show="prebox">
+
+      Form valid: {{ccForm.$valid}}
+      
+      Form email.$error: {{ccForm.email.$error}}
+      
+      User via $scope.watch: {{MC.watchObj | json}}
+      <!-- ^This val is set by the watch on $scope, NOT $scope.user -->
+    </pre>
+  </div>
+
+  <div class="block">
+    <a class="nav" ui-sref="main.users">Display Users</a>
+    <a class="nav" ui-sref="main.else">Something Else</a>  
+  </div>
+
+  <div id="child-view" ui-view></div>

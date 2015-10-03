@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="BasicAngular">
+
+  <head>
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="node_modules/firebase/lib/firebase-web.js"></script>
+    <script src="node_modules/angularfire/dist/angularfire.min.js"></script>
+    <link rel="stylesheet" href="styles/style.css" />
+    <base href="/"></base>
+  </head>
+
+  <body>
+    <h2>Hello!</h2>
+
+    <div ui-view></div>
+
+    <!-- run -->
+    <script src="app.js"></script>
+
+    <!-- inject -->
+    <script src="components/controllers/main.controller.js"></script>
+    <script src="components/controllers/user.controller.js"></script>
+    <script src="components/directives/validate_email.directive.js"></script>
+    <script src="components/directives/verify_pass.directive.js"></script>
+    <script src="components/directives/user_display/user_display.directive.js"></script>
+    <script src="components/services/resource.factory.js"></script>
+    <script src="db/faux.db.js"></script>
+
+  </body>
+</html>
