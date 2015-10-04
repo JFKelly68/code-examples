@@ -13,9 +13,9 @@ angular.module("BasicAngular")
             // $timeout to simulate req/res loop
             $timeout(function() {
               if(resource.getOne(mVal)) {
-                test.reject()
+                test.reject();
               }
-              else test.resolve()
+              else test.resolve();
             }, 2000)
             return test.promise;
           }

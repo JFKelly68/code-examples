@@ -16,7 +16,7 @@
     <div>
       <div class="error" ng-show="ccForm.password.$dirty && ccForm.verify.$dirty && (MC.user.password.length && ccForm.verify.$viewValue.length) && ccForm.verify.$error.verify">Passwords Do Not Match</div>
       <span class="waiting" ng-show="ccForm.email.$pending.emailInvalid">...</span>
-      <span class="valid" ng-show="ccForm.email.$dirty && !ccForm.email.$error.emailInvalid && !ccForm.email.$pending.emailInvalid">Good!</span>
+      <span class="valid" ng-show="ccForm.email.$dirty && !ccForm.email.$error.emailInvalid && !ccForm.email.$pending.emailInvalid && MC.user.email.length">Email is good to go!</span>
       <span class="error" ng-show="ccForm.email.$dirty && ccForm.email.$error.emailInvalid">X -Email already in use- X</span>
     </div>
     <div class="input-field">

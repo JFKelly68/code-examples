@@ -30,7 +30,7 @@ angular.module("BasicAngular",
               var u = resource.getAll()
               if(u) userAsync.resolve(u);
               else userAsync.reject();
-            }, 3000);
+            }, 1000);
             
             return userAsync.promise
           }
