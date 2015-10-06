@@ -7,5 +7,5 @@ Users can enter whatever text they please and on submit, a request will be made 
 which will return the first 30 usernames that match the input text.
 
 The histogram displays a total count of each letter (and "other" char) in the 30 returned usernames.
-The hisogram will update on each submission with new data and looks pretty cool, if I do say so myself
+The hisogram will update on each submission with new data and looks pretty cool, if I do say so myself.it
 

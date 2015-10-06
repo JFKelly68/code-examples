@@ -1,9 +1,9 @@
 
 <!-- This h4 is grabbing the value from a parent controller using MC -->
 <!-- MC being the name of the instance of the controller created using 'as' -->
-<div class="">Look at userView.html to see usage of:</div>
+<div class="">Look at user_list.html to see usage of:</div>
 <div>{{UC.exampleVal}}</div>
-<h4 ng-click="UC.test()">{{MC.exampleVal}}</h4>
+<h4>{{MC.exampleVal}}</h4>
 <ul class="user-container">
   <li class="users" ng-repeat="user in UC.users">
     <user-display user="user"></user-display>

@@ -3,7 +3,6 @@ angular.module("BasicAngular")
 	    var vm = this;
 	    vm.users = users;
 	          
-	    vm.test = function() { resource.getAllAsync() }
 	    vm.exampleVal = "\{\{MC.exampleVal\}\} versus \{\{UC.exampleVal\}\}"
 	          
 	})

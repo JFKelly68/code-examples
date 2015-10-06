@@ -3,6 +3,10 @@
   box-sizing: border-box;
 }
 
+ul {
+  padding: 0;
+}
+
 body {
   text-align: center;
 }
@@ -68,7 +72,7 @@ form {
 
 #child-view {
   margin: 0 15%;
-  height: 180px;
+  height: 280px;
   padding-top: 10px;
   background-color: #DDD;
   box-shadow: inset 0 0 5px #444;
@@ -77,23 +81,51 @@ form {
 
 .user-container {
   width: 50%;
+  min-width: 400px;
   margin: 0 auto;
   list-style: none;
 }
 
 .users {
+  position: relative;
   margin: 1em 5px;
+  width: 100%;
+  min-width: 300px;
   padding: 6px;
   border: 1px solid #AAA;
   background-color: #FFF;
+  overflow: hidden;
 }
 
-.users div {
+.users .content {
+  position: relative;
+  display: inline-block;
+  height: 40px;
   text-align: left;
-  margin-left: 3em;
+  width: 75%;
 }
 
-.users .val {
+.users .content span {
+  width: 50%;
+}
+
+.users .content .val {
   margin-left: 2em;
   color: #3F62EA;
 }
+
+.users .button {
+  float: right;
+  height: 20px;
+  width: 10%;
+  text-align: center;
+  color: #777;
+  clear: both;
+}
+
+.users .button:hover {
+  color: #000;
+  cursor: pointer;
+
+}
+

@@ -1,6 +1,13 @@
-<div>
-	<span class="key">Name:</span><span class="val">{{user.name}}</span>
+<div class="content">
+	<div><span class="key">Name:</span>
+		<span class="val" ng-show="!editable">{{user.name}}</span>
+		<input class="inVal" ng-show="editable" ng-model="user.name" placeholder="Change name"/>
+	</div>
+	<div><span class="key">Email:</span>
+		<span class="val" ng-show="!editable">{{user.email}}</span>
+		<input class="inVal" ng-show="editable" ng-model="user.email" placeholder="Change email"/>
+	</div>
 </div>
-<div>
-	<span class="key">Email:</span><span class="val">{{user.email}}</span>
-</div>
+<div class="button" ng-click="remove(user)">&times;</div>
+<div class="button" ng-show="!editable" ng-click="edit()">&#916;</div>
+<div class="button" ng-show="editable" ng-click="save(user)">$</div>

@@ -1,10 +1,10 @@
 'use strict'
 angular.module("BasicAngular")
-  .factory("resource", function($timeout, fauxDB) {
+  .factory("resource", function($timeout, fireDB) {
 
     var users; 
 
-    fauxDB.$loaded()
+    fireDB.$loaded()
     .then(function(list) {
       users = list;
     })
@@ -13,50 +13,48 @@ angular.module("BasicAngular")
     });
     
     function getAll() {
-      return fauxDB;
+      return fireDB;
     }
     
     function getOne(target) {
-      // for(var i=0, len=users.length; i<len;i++){
-      //   if(target === users[i].email) return users[i];
-      // }
-      // return false;
-      return fauxDB.$getRecord(target);
+      return fireDB.$getRecord(target);
     }
     
     function post(data) {
-      // if(inDb(data)){
-      //   console.log("in post", data);
-      //   fauxDB.insert(data);
-      // } else return "already exists";
-
-      return fauxDB.$add(data)
+      return fireDB.$add(data)
       .then(function(ref) {
-        var id = ref.key()
-        console.log("User added with ID ", id);
-        return id;
+        console.log("User added");
+        return ref.key();
       });
     }
     
-    function put(target, data) {
-      var user = getOne(target);
-      user.save(data)
+    function put(target) {
+      return fireDB.$save(target)
       .then(function(ref) {
         return ref.key();
       })
+      .catch(function(e) {
+        return e;
+      })
     }
-    // function inDb(user) {
-    //   for(var i=0, len=users.length; i<len;i++){
-    //     if(user.email === users[i].email) return false;
-    //   }
-    //   return true;
-    // }
+
+    function destroy(target) {
+      return fireDB.$remove(target)
+      .then(function(ref) {
+        console.log("Deleted")
+      })
+      .catch(function(e) {
+        return e;
+      });
+    }
+    
 
     return {
       getAll: getAll,
       getOne: getOne,
       post: post,
-      put: put
+      put: put,
+      destroy: destroy
       // check: inDb
     }
   })
